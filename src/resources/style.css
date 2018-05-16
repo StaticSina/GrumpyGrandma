@@ -1,0 +1,60 @@
+
+.root {
+    -fx-font-family: "Univers LT Std";
+    src: url("/resources/fonts/univercl.ttf");
+}
+
+#pane {
+    -fx-background-image: url("/resources/images/GrumpyBG.png");
+    -fx-background-size: 675 675;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center center;
+    -fx-font-smoothing-type: lcd;
+}
+
+#gameTitle {
+    -fx-font-size: 40;
+    -fx-text-fill: WHITE;
+    -fx-padding: 40 0 90 0 ;
+    -fx-alignment: center-left;
+}
+
+#gameOverLabel, #saveScoreLabel {
+    -fx-background-color: black;
+    -fx-text-fill: WHITE;
+    -fx-alignment: center-left;
+    -fx-padding: 10 0 20 0;
+}
+#gameOverLabel {
+    -fx-font-size: 40;
+}
+
+#saveScoreLabel {
+    -fx-font-size: 27;
+}
+
+#gameOver, #saveScore, #layoutPause {
+    -fx-background-color: black;
+}
+
+#pauseHeader {
+    -fx-font-size: 33;
+    -fx-text-fill: WHITE;
+    -fx-alignment: center;
+    -fx-padding: 0 0 90 0 ;
+}
+
+#menuButtons {
+    -fx-background-color: transparent;
+    -fx-font-size: 20;
+    -fx-text-fill: WHITE;
+    -fx-alignment: center-left;
+    -fx-pref-width: 200;
+    -fx-pref-height: 50;
+}
+
+#menuButtons:focused {
+    -fx-background-color: rgb(41, 43, 45);
+    -fx-text-fill: WHITE;
+    -fx-font-size: 23;
+}
