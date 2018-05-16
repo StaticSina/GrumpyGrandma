@@ -63,14 +63,6 @@ public class GameMenu extends Application {
 
 
         // Starte med kontakt med knapp
-        btnStart.setOnAction(event -> {
-            Game.playMusic = true;
-            Game.Grumpy.setScene(Game.gameScreen);
-            GameEngine.resetLives(3);
-            GameEngine.resetCounter();
-            setRunning(true, true);
-        });
-
         /*
           setOnKeyPressed er lagt til da det er trøbbel på MAC ved bruk av setOnAction.
           Løsningen vår var da å legge inn en keylistener for ENTER knappen.
@@ -85,12 +77,6 @@ public class GameMenu extends Application {
                 setRunning(true, true);
                 Game.playMusic = true;
             }
-        });
-
-        btnLoadGame.setOnAction(event -> {
-            Game.Grumpy.setScene(Game.gameScreen);
-            engine.loadGame();
-            setRunning(true, true);
         });
 
         btnLoadGame.setOnKeyPressed(event -> {

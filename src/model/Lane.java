@@ -96,7 +96,6 @@ public class Lane implements Serializable {
                     rectBrown.setFitHeight(Map.rectangleHeight);
                     laneObjects.add(rectBrown);
                 }
-
             }
         }
         return laneObjects;

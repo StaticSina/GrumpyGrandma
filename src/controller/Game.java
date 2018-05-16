@@ -26,7 +26,6 @@ public class Game extends Application {
     private static boolean restart = false;
 
     //Graphics
-
     /**
      * The constant width of the screen.
      */
@@ -122,13 +121,9 @@ public class Game extends Application {
         private void startGame (Stage primaryStage){
             Grumpy = primaryStage;
 
-;
-
             gameMenu = new GameMenu(engine);
             settingsMenu = new SettingsMenu(engine);
             startAmbientMusic();
-
-
 
             menuScreen = new Scene(gameMenu.root);
             settingsScreen = new Scene(settingsMenu.grid);

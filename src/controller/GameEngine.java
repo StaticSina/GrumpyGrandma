@@ -88,10 +88,10 @@ public class GameEngine extends Application {
      */
     public static int count = 0;
 
-    // Spilleren starter med 3 liv
+    // This ensures that the player spawns with 3 lives
     private static int lives = 3;
 
-    // Bildet som brukes for å vise liv + rektanglene som bildene legges i.
+    // Each photo is stored inside a rectangle, this ensures each rectangle is given a heart.
     private final Image hjerte = new Image("resources/images/hjerte1.png");
     private final Rectangle life3 = new Rectangle(60, 1, 20,20);
     private final Rectangle life2 = new Rectangle(40, 1, 20,20);
@@ -105,18 +105,18 @@ public class GameEngine extends Application {
      * Instantiates a new Game engine.
      */
     public GameEngine() {
-        // Lager et nytt pane, og størrelsen defineres.
+        // creates a new pane and defines preferred size.
         pane = new Pane();
         pane.setPrefSize(Game.width, Game.height);
 
-        // Oppretter map, player og lanecount
+        // Creates map, player and lanecounter
         map = new Map();
         map.generateRandomLanes(3, 1, 3, 2, 5, 1, 4);
         player = generatePlayer();
         laneCount = new Label();
         startPosY = map.getLaneList().get(0).getY();
 
-        // Legger map og player på pane.
+        // Add the player to the map and creates the map
         renderBackground();
         renderMap();
         renderPlayer();
@@ -184,15 +184,14 @@ public class GameEngine extends Application {
     /**
      * Reset lives.
      *
-     * @param i the
+     * @param i defines lives player restarts with when game is reset
      */
-//Brukes i GameOVerWindow for å sette liv til 3 igjen når spillet starter på nytt
     public static void resetLives(int i){
         lives = i;
     }
 
 
-    // Sjekker om spilleren er i kontakt med biler, og om de er i vannet i river-lanes.
+    // A collision checker that checks is player is in contact with lane-objects
     private void checkCollision() {
         for (Lane lane : map.getLaneList()) {
             for (ImageView imageView : lane.getLaneObjects()) {
@@ -265,7 +264,8 @@ public class GameEngine extends Application {
     /**
      * On death.
      */
-// Med respawn
+
+    // Med respawn
     public void onDeath() {
         playSound("crash", 1);
         playSound("scream", 1);
@@ -416,7 +416,8 @@ public class GameEngine extends Application {
     /**
      * The constant sort. Sorts the array in {@link #listHighscores()}
      */
-// brukes for å sortere array i listHighscores()
+
+    // brukes for å sortere array i listHighscores()
     private static final Comparator<? super String> sort = (Comparator<String>) (score1, score2) -> {
         int place1 = Integer.parseInt(score1.split(";")[1]);
         int place2 = Integer.parseInt(score2.split(";")[1]);
@@ -430,7 +431,7 @@ public class GameEngine extends Application {
     /**
      * Loads highscores from a text file and displays them in a leaderboard.
      */
-// Brukes for å lese alle lagrede scores og sorterer de og legger de i filen "highscores.txt".
+    // Brukes for å lese alle lagrede scores og sorterer de og legger de i filen "highscores.txt".
     public static void listHighscores() {
 
         try {
@@ -450,7 +451,6 @@ public class GameEngine extends Application {
 
             //kaller på Comparator for å sortere linjene fra høyeste til laveste score
             array.sort(sort);
-
 
             File file2 = new File("src/resources/highscores.txt");
 
